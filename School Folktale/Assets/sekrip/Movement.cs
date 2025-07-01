@@ -1,5 +1,3 @@
-
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,8 +5,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField]
     private InputActionReference
-    _movementinput,
-    _camerainput;
+    _movementinput;
 
     [SerializeField]
     private CharacterController controller;
@@ -16,7 +13,7 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private float speed = 5f,
     gravitation = -9.81f,
-    rotationSpeed = 5f;
+    rotationSpeed = 10f;
 
     private float currentYRotation = 0f;
 
@@ -40,9 +37,6 @@ public class Movement : MonoBehaviour
         Vector2 input = _movementinput.action.ReadValue<Vector2>();
         movementhandle(input);
 
-        Vector2 rotation = _camerainput.action.ReadValue<Vector2>();
-        camerahandler(rotation);
-
         if (gravity)
         {
             gravityhandler();
@@ -56,6 +50,9 @@ public class Movement : MonoBehaviour
         {
             velocity.y += gravitation * Time.deltaTime;
         }
+
+
+
     }
 
     private void movementhandle(Vector2 input)
@@ -70,11 +67,10 @@ public class Movement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    private void camerahandler(Vector2 input)
-    {
-        currentYRotation += input.x * rotationSpeed * Time.deltaTime;
-
-        transform.rotation = Quaternion.Euler(0f, currentYRotation, 0f);
-    }
+    // private void bodyrotation(Vector2 input)
+    // {
+    //     float sens = input.x * rotationSpeed * Time.deltaTime;
+    //     transform.Rotate(Vector3.up * sens);
+    // }
 }
 
