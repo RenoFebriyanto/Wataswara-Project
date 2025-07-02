@@ -12,19 +12,24 @@ public class Movement : MonoBehaviour
 
     [SerializeField]
     private float speed = 5f,
-    gravitation = -9.81f,
-    rotationSpeed = 10f;
-
-    private float currentYRotation = 0f;
+    gravitation = -9.81f;
 
     [SerializeField]
     private bool gravity;
 
     private Vector3 velocity;
 
+    [SerializeField]
+    private Transform orientation;
+    private Vector3 movedirection;
+
+    [SerializeField]
+    private Animator anim;
+
     void Awake()
     {
-        controller.GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
     }
     void Start()
     {
@@ -36,6 +41,16 @@ public class Movement : MonoBehaviour
     {
         Vector2 input = _movementinput.action.ReadValue<Vector2>();
         movementhandle(input);
+        Debug.Log(anim);
+
+        if (input.x != 0 || input.y != 0)
+        {
+            anim.SetBool("walk", true);
+        }
+        else
+        {
+            anim.SetBool("walk", false);
+        }
 
         if (gravity)
         {
@@ -57,20 +72,13 @@ public class Movement : MonoBehaviour
 
     private void movementhandle(Vector2 input)
     {
-        Vector3 move = new Vector3(input.x, 0f, input.y);
-        move = transform.TransformDirection(move);
-        controller.Move(move * speed * Time.deltaTime);
+        movedirection = orientation.forward * input.y + orientation.right * input.x;
+        controller.Move(movedirection.normalized * speed * Time.deltaTime);
     }
 
     private void gravityhandler()
     {
         controller.Move(velocity * Time.deltaTime);
     }
-
-    // private void bodyrotation(Vector2 input)
-    // {
-    //     float sens = input.x * rotationSpeed * Time.deltaTime;
-    //     transform.Rotate(Vector3.up * sens);
-    // }
 }
 

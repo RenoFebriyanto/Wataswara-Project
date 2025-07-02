@@ -238,8 +238,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508111911}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09919871, y: -0.000000012002339, z: 0.000000001196518, w: 0.99506766}
-  m_LocalPosition: {x: 791.3592, y: 172.82947, z: 313.31177}
+  m_LocalRotation: {x: -0.025379896, y: 0.000000007255188, z: 1.8419524e-10, w: 0.9996779}
+  m_LocalPosition: {x: 791.3592, y: 26.730345, z: 312.99335}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -609,7 +609,7 @@ MonoBehaviour:
         DecelTime: 0.2
     - Name: Look Orbit Y
       Owner: {fileID: 1046498613}
-      Enabled: 0
+      Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
         Gain: -1
@@ -664,17 +664,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Composition:
-    ScreenPosition: {x: 0, y: 0.73}
+    ScreenPosition: {x: 0, y: 0.83}
     DeadZone:
-      Enabled: 1
-      Size: {x: 0, y: 0.02}
+      Enabled: 0
+      Size: {x: 0, y: 0}
     HardLimits:
       Enabled: 0
-      Size: {x: 0.8, y: 0.8}
+      Size: {x: 0.8, y: 2}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
   TargetOffset: {x: 0, y: -0.31, z: 0}
-  Damping: {x: 0.5, y: 0.5}
+  Damping: {x: 0, y: 0}
   Lookahead:
     Enabled: 0
     Time: 0
@@ -695,7 +695,7 @@ MonoBehaviour:
   TargetOffset: {x: 0, y: 0, z: 0}
   TrackerSettings:
     BindingMode: 3
-    PositionDamping: {x: 1, y: 1, z: 1}
+    PositionDamping: {x: 0, y: 0, z: 0}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
@@ -703,14 +703,14 @@ MonoBehaviour:
   Radius: 10
   Orbits:
     Top:
-      Radius: 1.62
+      Radius: 0.74
       Height: 2.77
     Center:
-      Radius: 1.62
-      Height: 1.93
+      Radius: 1.94
+      Height: 1.49
     Bottom:
-      Radius: 1.62
-      Height: -0.18
+      Radius: 0.76
+      Height: 0.34
     SplineCurvature: 0
   RecenteringTarget: 2
   HorizontalAxis:
@@ -724,7 +724,7 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   VerticalAxis:
-    Value: 15.9
+    Value: 16.7
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0
@@ -794,8 +794,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046498609}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0991987, y: -0.000000012002336, z: 0.0000000011965176, w: 0.9950677}
-  m_LocalPosition: {x: 791.3592, y: 172.82947, z: 313.31177}
+  m_LocalRotation: {x: -0.025379896, y: 0.0000000072551876, z: 1.8419523e-10, w: 0.9996779}
+  m_LocalPosition: {x: 791.3592, y: 26.730345, z: 312.99335}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1005,8 +1005,9 @@ MonoBehaviour:
   controller: {fileID: 1394943413}
   speed: 4
   gravitation: -9.81
-  rotationSpeed: 40
   gravity: 1
+  orientation: {fileID: 39816973}
+  anim: {fileID: 1394943418}
 --- !u!114 &1394943415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,6 +1043,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7375438892611426749, guid: 75f582752a9a5774dbabd596a75f7bd0, type: 3}
   m_PrefabInstance: {fileID: 1791945535}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1394943418 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3511398462359438279, guid: 75f582752a9a5774dbabd596a75f7bd0, type: 3}
+  m_PrefabInstance: {fileID: 1791945535}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1716164618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6470269083479119766, guid: 75f582752a9a5774dbabd596a75f7bd0, type: 3}
@@ -1055,13 +1061,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3511398462359438279, guid: 75f582752a9a5774dbabd596a75f7bd0, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9390226dc16672249a9943f8535a63db, type: 2}
+    - target: {fileID: 3511398462359438279, guid: 75f582752a9a5774dbabd596a75f7bd0, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7375438892611426749, guid: 75f582752a9a5774dbabd596a75f7bd0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 791.3592
       objectReference: {fileID: 0}
     - target: {fileID: 7375438892611426749, guid: 75f582752a9a5774dbabd596a75f7bd0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 171
+      value: 25.28
       objectReference: {fileID: 0}
     - target: {fileID: 7375438892611426749, guid: 75f582752a9a5774dbabd596a75f7bd0, type: 3}
       propertyPath: m_LocalPosition.z
