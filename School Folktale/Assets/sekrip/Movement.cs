@@ -23,13 +23,13 @@ public class Movement : MonoBehaviour
     private Transform orientation;
     private Vector3 movedirection;
 
-    [SerializeField]
-    private Animator anim;
+    // [SerializeField]
+    // private Animator anim;
 
     void Awake()
     {
         controller = GetComponent<CharacterController>();
-        anim = GetComponent<Animator>();
+        // anim = GetComponent<Animator>();
     }
     void Start()
     {
@@ -41,16 +41,16 @@ public class Movement : MonoBehaviour
     {
         Vector2 input = _movementinput.action.ReadValue<Vector2>();
         movementhandle(input);
-        Debug.Log(anim);
 
-        if (input.x != 0 || input.y != 0)
-        {
-            anim.SetBool("walk", true);
-        }
-        else
-        {
-            anim.SetBool("walk", false);
-        }
+
+        // if (input.x != 0 || input.y != 0)
+        // {
+        //     anim.SetBool("walk", true);
+        // }
+        // else
+        // {
+        //     anim.SetBool("walk", false);
+        // }
 
         if (gravity)
         {
