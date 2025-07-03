@@ -29,6 +29,7 @@ public class Movement : MonoBehaviour
     void Awake()
     {
         controller = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
     }
     void Start()
     {
@@ -38,8 +39,9 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         Vector2 input = _movementinput.action.ReadValue<Vector2>();
+        movementhandle(input);
+        Debug.Log(anim);
 
         if (input.x != 0 || input.y != 0)
         {
@@ -64,13 +66,8 @@ public class Movement : MonoBehaviour
             velocity.y += gravitation * Time.deltaTime;
         }
 
-        
 
-    }
-    void FixedUpdate()
-    {
-        Vector2 input = _movementinput.action.ReadValue<Vector2>();
-        movementhandle(input);
+
     }
 
     private void movementhandle(Vector2 input)
