@@ -4,32 +4,30 @@ using UnityEngine.InputSystem;
 public class CameraHandler : MonoBehaviour
 {
     [Header("refferences")]
-    public Transform orientation, player, playerobj;
+    public Transform orientation;
+    public Transform playermesh;
+    public Transform player;
+    public InputActionReference move;
     public CharacterController controller;
 
-    public float rotationSpeed;
+    private float rotationSpd = 10f;
 
-    [SerializeField]
-    private InputActionReference keyboard;
     void Start()
     {
-        
+        move.action.Enable();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
-        Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
-        orientation.forward = viewDir.normalized;
+        Vector3 viewdir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
+        orientation.forward = viewdir.normalized;
 
-        Vector2 input = keyboard.action.ReadValue<Vector2>();
-        Debug.Log("Input: " + input); // <- this should print values like (0, 1) when you press W
+        //rotation
+        Vector2 input = move.action.ReadValue<Vector2>();
         Vector3 inputdir = orientation.forward * input.y + orientation.right * input.x;
 
         if (inputdir != Vector3.zero)
         {
-            playerobj.forward = Vector3.Slerp(playerobj.forward, inputdir.normalized, Time.deltaTime * rotationSpeed); 
+            playermesh.forward = Vector3.Slerp(playermesh.forward, inputdir.normalized, Time.deltaTime * rotationSpd);
         }
     }
 }
