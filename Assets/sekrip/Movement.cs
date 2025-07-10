@@ -1,4 +1,4 @@
-using System.Collections;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,6 +25,10 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private Transform orientation;
     private Vector3 movedirection;
+    public float stamina = 500f;
+
+    [SerializeField]
+    private Animator anim;
 
     void Awake()
     {
@@ -39,9 +43,11 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         Vector2 input = _movementinput.action.ReadValue<Vector2>();
         movementhandle(input);
+        animcontrol();
+        Debug.Log(speed);
         if (gravity)
         {
             gravityhandler();
@@ -57,30 +63,38 @@ public class Movement : MonoBehaviour
         }
 
         //sprint code
-        if (_runinput.action.IsPressed())
+        if (_runinput.action.IsPressed() && stamina > 0 && input != Vector2.zero)
         {
             speedcap = 5f;
-            Debug.Log("running");
+            if (stamina <= 250)
+            {
+                stamina -= 50f * Time.deltaTime;
+            }
+            else
+            {
+                stamina -= 25f * Time.deltaTime;
+            }
         }
         else
         {
             speedcap = 3f;
+            stamina += 25f * Time.deltaTime;
         }
+        stamina = Mathf.Clamp(stamina, 0, 500);
     }
 
     private void movementhandle(Vector2 input)
     {
         movedirection = orientation.forward * input.y + orientation.right * input.x;
-        if (input != Vector2.zero && speed<speedcap)
-        {
-            StartCoroutine(speedup());
-        }
         if (input == Vector2.zero)
         {
             speed = 1f;
         }
+        else
+        {
+            speed = Mathf.Lerp(speed, speedcap, Time.deltaTime * 3f);
+        }
         controller.Move(movedirection.normalized * speed * Time.deltaTime);
-        Debug.Log(speed);
     }
 
     private void gravityhandler()
@@ -88,18 +102,9 @@ public class Movement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    IEnumerator speedup()
+    void animcontrol()
     {
-        while (speed < speedcap)
-        {
-            speed += 0.1f;
-            yield return new WaitForSeconds(0.1f);
-        }
-        while (speed > speedcap)
-        {
-            speed -= 0.1f;
-            yield return new WaitForSeconds(0.1f);
-        }
-    }
+        anim.SetFloat("MoveSpeed", speed);
+    } 
 }
 
