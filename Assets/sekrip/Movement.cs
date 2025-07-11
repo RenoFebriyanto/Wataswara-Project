@@ -47,7 +47,6 @@ public class Movement : MonoBehaviour
         Vector2 input = _movementinput.action.ReadValue<Vector2>();
         movementhandle(input);
         animcontrol();
-        Debug.Log(speed);
         if (gravity)
         {
             gravityhandler();
