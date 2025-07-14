@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 public class doorcontroller : MonoBehaviour
 {
     public buttonholder key;
@@ -20,6 +21,8 @@ public class doorcontroller : MonoBehaviour
     private Animator anim;
     public Movement move;
     public MeshCollider collide;
+    public CameraHandler cam;
+    public Transform doorpov;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -63,17 +66,22 @@ public class doorcontroller : MonoBehaviour
 
     IEnumerator Openingdoor()
     {
+        move.anim.SetFloat("MoveSpeed",1);
         move.enabled = false;
         collide.enabled = false;
+        cam.enabled = false;
         isswitch = true;
         Main.Priority.Value = 0;
+        head.LookAt = doorpov;
         head.Priority.Value = 1;
         yield return new WaitForSeconds(1f);
         anim.SetBool("entering", true);
         yield return new WaitForSeconds(1.5f);
         Main.Priority.Value = 1;
         head.Priority.Value = 0;
+        yield return new WaitForSeconds(1f);
         isswitch = false;
+        cam.enabled = true;
         move.enabled = true;
         collide.enabled = true;
 

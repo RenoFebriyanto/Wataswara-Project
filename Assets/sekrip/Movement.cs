@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private float speedcap = 3f,
     gravitation = -9.81f;
-    private float speed = 1f;
+    public float speed = 1f;
 
     [SerializeField]
     private bool gravity;
@@ -27,8 +27,7 @@ public class Movement : MonoBehaviour
     private Vector3 movedirection;
     public float stamina = 500f;
 
-    [SerializeField]
-    private Animator anim;
+    public Animator anim;
 
     void Awake()
     {
