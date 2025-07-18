@@ -82,7 +82,6 @@ crashlytics-build.properties
 *.rar
 *.7z
 *.blend
-*.fbx
 
 # Optional: Ignore specific large folders (edit as needed)
 /Assets/TexturesRaw/
