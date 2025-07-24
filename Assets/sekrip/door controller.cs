@@ -51,16 +51,29 @@ public class doorcontroller : MonoBehaviour
         input.action.Enable();
         anim = GetComponent<Animator>();
     }
-
-    private void Update()
+    void OnEnable()
     {
-        if (input.action.IsPressed())
-        {  
-        if (playerInRange && !isswitch)
+        input.action.performed += singletap;
+        input.action.Enable();
+    }
+
+    void OnDisable()
+    {
+        input.action.performed -= singletap;
+        input.action.Disable();
+    }
+
+    void singletap(InputAction.CallbackContext context)
+    {
+        if (playerInRange)
         {
             StartCoroutine(Openingdoor());
         }
-        }
+    }
+
+    private void Update()
+    {
+
     }
 
 
