@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 556fff198aa548e47afa31f864859a79
+guid: 581623a4cebd74945b9ae11b45b270c2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookPaper
+    second: {fileID: 2100000, guid: c0cbfef4a6847d84fb2a1aa3f3be84bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cyan
+    second: {fileID: 2100000, guid: d963553a6e44e1c4193e1bdc8b828b2a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: f89151d475e302842932999390dcba90
+guid: 15c368bdd069aca449c1592111bcb0dd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: a4066506ea47dc146945e941883870bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookPaper
+    second: {fileID: 2100000, guid: f6bc3f59ffd53d346b322dd1313abbae, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
