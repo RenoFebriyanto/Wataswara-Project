@@ -6,20 +6,30 @@ public class RandomPosition : MonoBehaviour
 {
     private NavMeshAgent AI;
     public Transform centerPoint;
-    public float delayTime = 0.5f;
-    private bool isWaiting = false;
     public float range;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private bool waiting;
+
     void Start()
     {
         AI = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        StartCoroutine(DelayMove());
+        if (AI.remainingDistance <= AI.stoppingDistance && !waiting)
+        {
+            Vector3 point;
+            if (RandomPoint(centerPoint.position, range, out point))
+            {
+                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); // for debug
+                AI.SetDestination(point);
+            }
+
+            waiting = true;
+            StartCoroutine(wait());
+        }
     }
+
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
         Vector3 randomPoint = center + Random.insideUnitSphere * range;
@@ -32,19 +42,10 @@ public class RandomPosition : MonoBehaviour
         result = Vector3.zero;
         return false;
     }
-        IEnumerator DelayMove()
+
+    IEnumerator wait()
     {
-        isWaiting = true;
-        yield return new WaitForSeconds(delayTime);
-
-        Vector3 point;
-        if (RandomPoint(centerPoint.position, range, out point))
-        {
-            Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
-            AI.SetDestination(point);
-        }
-
-        isWaiting = false;
+        yield return new WaitForSeconds(1f);
+        waiting = false;
     }
-
 }

@@ -32,6 +32,6 @@ public class flashlight : MonoBehaviour
     }
     void Start()
     {
-        spotlight.spotAngle = 45f;
+
     }
 }
