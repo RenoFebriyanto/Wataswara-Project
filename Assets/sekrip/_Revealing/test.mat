@@ -30,12 +30,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _Glossiness: 0.5
-    - _LightAngle: 113.05799
+    - _LightAngle: 64.95792
     - _Metallic: 0
     - _StrengthScalar: 50
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _LightDirection: {r: 0.13721, g: -0, b: -0.990542, a: 0}
-    - _LightPosition: {r: 4.553984, g: 1.583, b: 10.060086, a: 0}
+    - _LightPosition: {r: 4.554135, g: 1.202, b: 7.9673133, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
