@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using Unity.Cinemachine;
 
 public class Pocong : MonoBehaviour
 {
@@ -9,16 +10,19 @@ public class Pocong : MonoBehaviour
     public Transform centerPoint;
     public float delayTime = 0.5f;
     private bool isWaiting = false;
-    public Transform player;
-    Vector3 dest;
-    public float aispeed, catchDistance, jumpscareTime;
     public Light spotlight;
 
     private Coroutine waitCoroutine = null;
+    private Animator anim;
+    private AudioSource audio;
+    public CinemachineCamera Jumpscarecam;
 
     void Start()
     {
         AI = GetComponent<NavMeshAgent>();
+        
+        anim = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -35,6 +39,7 @@ public class Pocong : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, spotlight.range))
             {
+                Debug.DrawRay(spotlight.transform.position, toTarget);
                 if (hit.transform == this.transform)
                 {
                     inLightCone = true;
@@ -47,17 +52,20 @@ public class Pocong : MonoBehaviour
             waitCoroutine = StartCoroutine(WaitForJumpscare());
         }
 
-        if (!inLightCone && waitCoroutine != null   )
-        {
-            StopCoroutine(waitCoroutine);
-            waitCoroutine = null;
-            AI.isStopped = false; // Resume movement if flashlight gone
-        }
-
         if (!isWaiting && AI.remainingDistance <= AI.stoppingDistance && !AI.pathPending && waitCoroutine == null)
         {
             StartCoroutine(DelayMove());
         }
+
+        if (AI.remainingDistance <= AI.stoppingDistance || AI.isStopped)
+        {
+            anim.SetBool("Iswalk", false);
+        }
+        else
+        {
+            anim.SetBool("Iswalk", true);
+        }
+        Debug.Log(waitCoroutine);
     }
 
     IEnumerator DelayMove()
@@ -91,7 +99,7 @@ public class Pocong : MonoBehaviour
     IEnumerator WaitForJumpscare()
     {
         AI.isStopped = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         jumpscare();
     }
 
@@ -99,5 +107,45 @@ public class Pocong : MonoBehaviour
     {
         Debug.Log("💀 Jumpscare triggered by Pocong!");
         // implement camera switch, game over, scream, etc.
+        Jumpscarecam.Priority = 10;
+        audio.Play();
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Flashlight"))
+        {
+            if (spotlight.enabled && waitCoroutine == null)
+            {
+                waitCoroutine = StartCoroutine(WaitForJumpscare());
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        Debug.Log("IM EXITING BITCH");
+        if (other.CompareTag("Flashlight"))
+        {
+            if (waitCoroutine != null)
+            {
+                StopCoroutine(waitCoroutine);
+                waitCoroutine = null;
+                AI.isStopped = false;
+            }
+        }
+    }
+
+        // void OnTriggerStay(Collider other)
+        // {
+        //         Debug.Log(other.tag);
+        //     if (other.CompareTag("Flashlight"))
+        //     {
+        //         Debug.Log("inflash");
+        //         if (spotlight.enabled && waitCoroutine == null)
+        //         {
+        //             waitCoroutine = StartCoroutine(WaitForJumpscare());
+        //         }
+        //     }
+        // }
 }

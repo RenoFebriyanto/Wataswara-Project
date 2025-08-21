@@ -59,7 +59,7 @@ MonoBehaviour:
   Target:
     TrackingTarget: {fileID: 0}
     LookAtTarget: {fileID: 0}
-    CustomLookAtTarget: 1
+    CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60.000004
     OrthographicSize: 10
@@ -103,14 +103,14 @@ MonoBehaviour:
   Radius: 10
   Orbits:
     Top:
-      Radius: 0.78
-      Height: 2.08
+      Radius: 0.38
+      Height: 1
     Center:
-      Radius: 1.5
-      Height: 1.78
+      Radius: 1.64
+      Height: 0
     Bottom:
-      Radius: 1.02
-      Height: 0.69
+      Radius: 0.69
+      Height: -1
     SplineCurvature: 0.5
   RecenteringTarget: 2
   HorizontalAxis:
