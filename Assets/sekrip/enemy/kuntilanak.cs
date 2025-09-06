@@ -12,12 +12,14 @@ public class kuntilanak : MonoBehaviour
     private Rigidbody rb;
     private float timing;
     private Vector3 playerpos;
+    public AudioSource audioJump;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && Random.Range(0, 100) <= 70)
         {
             mesh.transform.position = spawnPoint.position;
+            audioJump.Play();
             playerpos = player.position;
             isChasing = true;
         }
@@ -47,5 +49,6 @@ public class kuntilanak : MonoBehaviour
     {
         Vector3 dir = (playerpos - mesh.transform.position).normalized;
         rb.MovePosition(mesh.transform.position + dir * speed * Time.deltaTime);
+        
     }
 }
