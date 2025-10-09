@@ -2362,6 +2362,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1acf6251ae43f14469553578ec74ce79, type: 3}
+--- !u!1001 &1883110226477181395
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2358324371843207463, guid: 003fe4db181b31a4baa86d13bbe629b8, type: 3}
+      propertyPath: m_Name
+      value: Gantungan Pot Tanaman (TANPA POT TANAMAN)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166491413440105373, guid: 003fe4db181b31a4baa86d13bbe629b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166491413440105373, guid: 003fe4db181b31a4baa86d13bbe629b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166491413440105373, guid: 003fe4db181b31a4baa86d13bbe629b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166491413440105373, guid: 003fe4db181b31a4baa86d13bbe629b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166491413440105373, guid: 003fe4db181b31a4baa86d13bbe629b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166491413440105373, guid: 003fe4db181b31a4baa86d13bbe629b8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166491413440105373, guid: 003fe4db181b31a4baa86d13bbe629b8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166491413440105373, guid: 003fe4db181b31a4baa86d13bbe629b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166491413440105373, guid: 003fe4db181b31a4baa86d13bbe629b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166491413440105373, guid: 003fe4db181b31a4baa86d13bbe629b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 003fe4db181b31a4baa86d13bbe629b8, type: 3}
 --- !u!1001 &2237563245909469638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3274,6 +3331,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d14d0e9cc7a7ba41a005da709181fe3, type: 3}
+--- !u!1001 &8427147116473316959
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5069913047095899743, guid: 55061f3d66ae07e4c87a47405b7ff43d, type: 3}
+      propertyPath: m_Name
+      value: Kursi Kayu Warkop
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552977521872776421, guid: 55061f3d66ae07e4c87a47405b7ff43d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.1226807
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552977521872776421, guid: 55061f3d66ae07e4c87a47405b7ff43d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.000000008789982
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552977521872776421, guid: 55061f3d66ae07e4c87a47405b7ff43d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.8729696
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552977521872776421, guid: 55061f3d66ae07e4c87a47405b7ff43d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552977521872776421, guid: 55061f3d66ae07e4c87a47405b7ff43d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552977521872776421, guid: 55061f3d66ae07e4c87a47405b7ff43d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552977521872776421, guid: 55061f3d66ae07e4c87a47405b7ff43d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552977521872776421, guid: 55061f3d66ae07e4c87a47405b7ff43d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552977521872776421, guid: 55061f3d66ae07e4c87a47405b7ff43d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552977521872776421, guid: 55061f3d66ae07e4c87a47405b7ff43d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 55061f3d66ae07e4c87a47405b7ff43d, type: 3}
 --- !u!1001 &8530017474884590221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3537,3 +3651,5 @@ SceneRoots:
   - {fileID: 3609058816411256124}
   - {fileID: 4767913967939354754}
   - {fileID: 8825299540302826735}
+  - {fileID: 1883110226477181395}
+  - {fileID: 8427147116473316959}
