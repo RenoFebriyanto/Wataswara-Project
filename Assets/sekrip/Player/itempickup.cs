@@ -29,7 +29,6 @@ public class itempickup : MonoBehaviour
     {
         if (other.CompareTag("Item"))
         {
-            Debug.Log("ENTERRRR");
             img.sprite = icon.icon;
             text.SetText(icon.Command);
             text.gameObject.SetActive(true);

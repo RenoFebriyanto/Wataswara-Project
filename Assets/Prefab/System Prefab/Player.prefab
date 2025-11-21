@@ -31,6 +31,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3202554726758719736}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3357328206981222355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3700534658312432637}
+  m_Layer: 0
+  m_Name: kunti spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3700534658312432637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3357328206981222355}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.05, y: 1.228, z: 7.93}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5571453792852912597}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3507229164453652745
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +324,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   senter: {fileID: 2168960722796933076, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  reload: {fileID: -5202710320918283477, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   spotlight: {fileID: 6438783491650749455}
+  Battery: 100
+  baterai: {fileID: 11400000, guid: 8321a7302b72d0c4fac5df9fafcf4c7b, type: 2}
+  Bateraibar: {fileID: 0}
 --- !u!114 &810683046766626223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,8 +378,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.336328, y: 1.1031779, z: 6.6164646}
-  m_Center: {x: 0.17491025, y: 0.051588833, z: 3.3994632}
+  m_Size: {x: 4.336328, y: 2.1873999, z: 6.6164646}
+  m_Center: {x: 0.17490962, y: -0.49052042, z: 3.399463}
 --- !u!1 &5114838937336869248
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +392,7 @@ GameObject:
   - component: {fileID: 4946607232439933172}
   - component: {fileID: 8552922102335102744}
   - component: {fileID: 6810460544450682004}
+  - component: {fileID: 1520143217086481464}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -459,6 +495,24 @@ MonoBehaviour:
   orientation: {fileID: 1036990698136296327}
   stamina: 500
   anim: {fileID: 1995634908138959791}
+--- !u!114 &1520143217086481464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114838937336869248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48ad5b52dd4c044f92d9b47862bf2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  icon: {fileID: 11400000, guid: 4fb39ffe43816554ba679c4198527db5, type: 2}
+  img: {fileID: 0}
+  text: {fileID: 0}
+  inventory:
+  - {fileID: 11400000, guid: 8321a7302b72d0c4fac5df9fafcf4c7b, type: 2}
 --- !u!1 &7301310763677350164
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +613,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 471669776683367166, guid: 8e1471e805192fd4e902f7cc7eec8378, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3052945027732064331}
+    - targetCorrespondingSourceObject: {fileID: 471669776683367166, guid: 8e1471e805192fd4e902f7cc7eec8378, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3700534658312432637}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e1471e805192fd4e902f7cc7eec8378, type: 3}
 --- !u!95 &1995634908138959791 stripped

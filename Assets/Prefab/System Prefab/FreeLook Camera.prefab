@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5d7c088409d9a40b7b09aa707777f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetOffset: {x: 0, y: 0, z: 0}
+  TargetOffset: {x: 0, y: 1.41, z: 0}
   TrackerSettings:
     BindingMode: 4
     PositionDamping: {x: 0, y: 0, z: 0}
@@ -103,14 +103,14 @@ MonoBehaviour:
   Radius: 10
   Orbits:
     Top:
-      Radius: 0.38
-      Height: 1
+      Radius: 0.81
+      Height: 1.48
     Center:
-      Radius: 1.64
+      Radius: 3.39
       Height: 0
     Bottom:
-      Radius: 0.69
-      Height: -1
+      Radius: 0.74
+      Height: -2.28
     SplineCurvature: 0.5
   RecenteringTarget: 2
   HorizontalAxis:
