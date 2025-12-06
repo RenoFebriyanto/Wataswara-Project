@@ -10,10 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 906bf1160be004345a1787d020ed440d, type: 3}
-  m_Name: Rania X Bunny
+  m_Name: Miaw
   m_EditorClassIdentifier: 
   Dialog:
-  - Dialogue: I Love you Bunny
+  - Dialogue: woi
     Speaker: Rania
-  - Dialogue: Go F#$K Yourself
+  - Dialogue: Ha?
     Speaker: Bunny
+  - Dialogue: I LOVE YOU BUNNY
+    Speaker: Rania
+  - Dialogue: I LOVE YOU TOO RANIA
+    Speaker: Bunny
+  - Dialogue: NJIr
+    Speaker: rANIA

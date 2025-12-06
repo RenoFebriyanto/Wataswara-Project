@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ec1bcf373d1d7408178b94b17fd2bb, type: 3}
   m_Name: Interact
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  Command: 
+  icon: {fileID: 21300000, guid: 0d7d590a48b80f84d964af5e34399a06, type: 3}
+  Command: Interact

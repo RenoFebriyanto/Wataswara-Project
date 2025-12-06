@@ -10,10 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 906bf1160be004345a1787d020ed440d, type: 3}
-  m_Name: Rania X Bunny
+  m_Name: Rak tanaman
   m_EditorClassIdentifier: 
   Dialog:
-  - Dialogue: I Love you Bunny
+  - Dialogue: Rak tamanan ini keren.
     Speaker: Rania
-  - Dialogue: Go F#$K Yourself
-    Speaker: Bunny
+  - Dialogue: bisa nyimpen 8 tanaman sekaligus.
+    Speaker: Rania
+  - Dialogue: Tapi.....
+    Speaker: Rania
+  - Dialogue: mana tanamannya ya?
+    Speaker: Rania
