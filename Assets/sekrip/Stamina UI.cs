@@ -1,7 +1,6 @@
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class StaminaUI : MonoBehaviour
 {
     public RectTransform leftscroll;
@@ -11,15 +10,25 @@ public class StaminaUI : MonoBehaviour
     public GameObject midleft;
     private Animator anim;
     public Movement movement;
+
+    //inventory
+    public VarInventory[] data;
+    public Image img;
+    public TextMeshProUGUI text;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         anim = GetComponent<Animator>();
+
+        img.sprite = data[0].UIIcon;
+        text.SetText(data[0].value.ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
+        text.SetText(data[0].value.ToString());
+
         if (anim != null)
         {
             anim.SetFloat("Stamina", movement.stamina);

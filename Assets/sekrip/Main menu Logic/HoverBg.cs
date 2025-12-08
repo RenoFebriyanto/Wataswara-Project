@@ -8,14 +8,12 @@ public class HoverBg : MonoBehaviour
 {
     public Image bghighlight;
 
-    private TextMeshProUGUI text;
     private Vector3 bgdefaultpos;
     private GraphicRaycaster raycaster;
     private EventSystem eventSystem;
 
     void Awake()
     {
-        text = GetComponent<TextMeshProUGUI>();
         bgdefaultpos = bghighlight.rectTransform.position;
 
         raycaster = GetComponentInParent<Canvas>().GetComponent<GraphicRaycaster>();
@@ -34,18 +32,19 @@ public class HoverBg : MonoBehaviour
 
         foreach (RaycastResult result in results)
         {
-            if (result.gameObject == gameObject)
+            if (result.gameObject.CompareTag("Hoverable"))
             {
+                TextMeshProUGUI hoveredText = result.gameObject.GetComponent<TextMeshProUGUI>();
+
+                if (hoveredText != null)
+                    bghighlight.rectTransform.position = hoveredText.rectTransform.position;
+
                 hovered = true;
                 break;
             }
         }
 
-        if (hovered)
-        {
-            bghighlight.rectTransform.position = text.rectTransform.position;
-        }
-        else
+        if (!hovered)
         {
             bghighlight.rectTransform.position = bgdefaultpos;
         }

@@ -9,6 +9,7 @@ TagManager:
   - Light
   - Flashlight
   - Item
+  - Hoverable
   layers:
   - Default
   - TransparentFX
