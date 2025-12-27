@@ -15,6 +15,7 @@ public class ObjText : MonoBehaviour
     public buttonholder button;
     public Image img;
     public TextMeshProUGUI tutorial;
+    public GameObject dialogCanvas;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +31,7 @@ public class ObjText : MonoBehaviour
 
     IEnumerator running()
     {
+        dialogCanvas.SetActive(true);
         nama.gameObject.SetActive(true);
         dialoguetext.gameObject.SetActive(true);
         for (int i = 0; i < Scene.Dialog.Count; i++)
@@ -46,6 +48,7 @@ public class ObjText : MonoBehaviour
         }
         nama.gameObject.SetActive(false);
         dialoguetext.gameObject.SetActive(false);
+        dialogCanvas.SetActive(false);
     }
         void OnEnable()
     {
@@ -62,6 +65,7 @@ public class ObjText : MonoBehaviour
     {
         if (inrange)
         {
+            Debug.Log("test");
                 StartCoroutine(running());
         }
     }

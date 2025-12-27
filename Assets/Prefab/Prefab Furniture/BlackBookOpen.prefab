@@ -10,31 +10,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.064
+      value: 207.2367
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0012922
+      value: -20.153767
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.905
+      value: -199.51236
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.92239124
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.38625687
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -42,15 +42,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 45.444
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8400817939261162373, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -7055617223113051126, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
       propertyPath: m_Name
       value: BlackBookOpen
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15c368bdd069aca449c1592111bcb0dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

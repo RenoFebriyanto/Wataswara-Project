@@ -18,7 +18,6 @@ public class RunningText : MonoBehaviour
     public TextMeshProUGUI tutorial;
     public Movement playermovement;
     public CameraHandler cam;
-    public bool isnpc;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,6 +34,8 @@ public class RunningText : MonoBehaviour
         input.action.Disable();
         GameCanvas.SetActive(false);
         TextCanvas.SetActive(true);
+        nama.gameObject.SetActive(true);
+        dialoguetext.gameObject.SetActive(true);
         playermovement.enabled = false;
         cam.enabled = false;
         for (int i = 0; i < Scene.Dialog.Count; i++)
@@ -49,28 +50,13 @@ public class RunningText : MonoBehaviour
             }
             yield return new WaitForSeconds(1f);
         }
+        nama.gameObject.SetActive(false);
+        dialoguetext.gameObject.SetActive(false);
         TextCanvas.SetActive(false);
         GameCanvas.SetActive(true);
         playermovement.enabled = true;
         input.action.Enable();
         cam.enabled = true;
-    }
-    IEnumerator Runningobj()
-    {
-        TextCanvas.SetActive(true);
-        for (int i = 0; i < Scene.Dialog.Count; i++)
-        {
-            nama.text = Scene.Dialog[i].Speaker;
-            String conversiation = Scene.Dialog[i].Dialogue;
-            dialoguetext.text = "";
-            for (int j = 0; j < conversiation.Length; j++)
-            {
-                dialoguetext.text += conversiation[j];
-            yield return new WaitForSeconds(0.03f);
-            }
-            yield return new WaitForSeconds(1f);
-        }
-        TextCanvas.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -112,14 +98,7 @@ public class RunningText : MonoBehaviour
     {
         if (inrange)
         {
-            if (isnpc)
-            {    
             StartCoroutine(RunningNPC());
-            }
-            else if (!isnpc)
-            {
-                StartCoroutine(Runningobj());
-            }
         }
     }
 }

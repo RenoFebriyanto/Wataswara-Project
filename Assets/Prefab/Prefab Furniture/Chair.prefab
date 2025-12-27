@@ -10,39 +10,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 386ac32214502d441b6872ec5a4331a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.769
+      value: 231.467
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 386ac32214502d441b6872ec5a4331a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.004
+      value: -21.065
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 386ac32214502d441b6872ec5a4331a5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.919
+      value: -189.086
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 386ac32214502d441b6872ec5a4331a5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.50008726
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 386ac32214502d441b6872ec5a4331a5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.49991274
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 386ac32214502d441b6872ec5a4331a5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.50008726
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 386ac32214502d441b6872ec5a4331a5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.49991274
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 386ac32214502d441b6872ec5a4331a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -89.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 386ac32214502d441b6872ec5a4331a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 386ac32214502d441b6872ec5a4331a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -51,6 +51,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 386ac32214502d441b6872ec5a4331a5, type: 3}
       propertyPath: m_Name
       value: Chair
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 386ac32214502d441b6872ec5a4331a5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
