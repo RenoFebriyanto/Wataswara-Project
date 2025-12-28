@@ -6,6 +6,7 @@ public class menufunction : MonoBehaviour
  public void Startgame()
     {
         SceneManager.LoadScene(1);
+        Musicplayer.instance.SetState(audiostate.ambience);
     }
 
  public void quit()
