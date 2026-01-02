@@ -217,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 4609396589541460413}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0.335, y: 0.89, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -328,7 +328,6 @@ MonoBehaviour:
   spotlight: {fileID: 6438783491650749455}
   Battery: 100
   baterai: {fileID: 11400000, guid: 8321a7302b72d0c4fac5df9fafcf4c7b, type: 2}
-  Bateraibar: {fileID: 0}
 --- !u!114 &810683046766626223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,6 +392,7 @@ GameObject:
   - component: {fileID: 8552922102335102744}
   - component: {fileID: 6810460544450682004}
   - component: {fileID: 1520143217086481464}
+  - component: {fileID: 4421531326535634917}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -436,13 +436,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.2
-  m_SlopeLimit: 45
+  m_Height: 1.84
+  m_Radius: 0.26
+  m_SlopeLimit: 90
   m_StepOffset: 0
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.01, z: 0}
+  m_Center: {x: 0, y: 0.93, z: 0}
 --- !u!114 &8552922102335102744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +513,21 @@ MonoBehaviour:
   text: {fileID: 0}
   inventory:
   - {fileID: 11400000, guid: 8321a7302b72d0c4fac5df9fafcf4c7b, type: 2}
+--- !u!114 &4421531326535634917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114838937336869248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 371ca25c603074245b608eae75634156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: -5273443213197183513, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  UIcanvas: {fileID: 0}
+  PauseCanvas: {fileID: 0}
 --- !u!1 &7301310763677350164
 GameObject:
   m_ObjectHideFlags: 0

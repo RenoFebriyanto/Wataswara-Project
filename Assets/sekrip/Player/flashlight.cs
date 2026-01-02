@@ -11,7 +11,6 @@ public class flashlight : MonoBehaviour
     private float power;
     public VarInventory baterai;
     private bool ispowered = true;
-    public GameObject Bateraibar;
     private Slider slider;
 
     void OnEnable()
@@ -56,8 +55,6 @@ public class flashlight : MonoBehaviour
     void Start()
     {
         power = Battery;
-        slider = Bateraibar.GetComponent<Slider>();
-        slider.maxValue = Battery;
     }
 
     void memuat()
@@ -72,7 +69,6 @@ public class flashlight : MonoBehaviour
     }
     void Update()
     {
-        slider.value = power;
         if (spotlight.enabled)
         {
             power -= Time.deltaTime;
